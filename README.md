@@ -19,8 +19,13 @@ A command-line RSS feed aggregator. Register an account, subscribe to feeds, run
    npm install
    ```
 
-2. Apply the database migrations (requires the config file below to be set up first):
+2. Create the CLI config file at `~/.gatorconfig.json` before running any commands:
 
+   ```json
+   {
+     "db_url": "postgres://user:password@localhost:5432/gator",
+     "current_user_name": ""
+   }
    ```bash
    npx drizzle-kit migrate
    ```
