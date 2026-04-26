@@ -26,6 +26,10 @@ A command-line RSS feed aggregator. Register an account, subscribe to feeds, run
      "db_url": "postgres://user:password@localhost:5432/gator",
      "current_user_name": ""
    }
+   ```
+
+3. Apply the database migrations:
+
    ```bash
    npx drizzle-kit migrate
    ```
@@ -48,7 +52,7 @@ The CLI reads its configuration from `~/.gatorconfig.json`. Create this file in 
 
 ## Running the CLI
 
-All commands are run through `npm start`:
+All commands are run through `npm run start`:
 
 ```bash
 npm run start -- <command> [args...]
@@ -90,7 +94,7 @@ npm run start -- register alice
 
 #### `agg` interval format
 
-The interval argument accepts the following suffixes:
+The interval argument must be a **positive whole number** immediately followed by one of the supported suffixes (e.g. `30s`, `5m`). Decimals and compound durations (e.g. `1m30s`) are not supported.
 
 | Suffix | Meaning | Example |
 |--------|---------|---------|
